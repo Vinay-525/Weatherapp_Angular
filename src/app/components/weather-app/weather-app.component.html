@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Weather App</h1>
+  <form (submit) = "onFire()">
+    <div class="form-group">
+      <label>Location : </label>
+      <input type="text" class="form-control" [(ngModel)]="location" name="location">
+      <br>
+      <input type="submit" class = "btn btn-success" value="Submit">
+    </div>
+  </form>
+  <h2>Address   : {{completeAdd}}</h2>
+  <h2>Latitude  : {{lat}}</h2>
+  <h2>Longitude : {{lng}}</h2>
+  <div *ngIf = "((weather-32)*5)/9 > 30 ">
+      <h2 class ="hot">Temperature(in Farenheit) : {{weather}}</h2>
+      <h2 class ="hot">Temperature(in Celsius) : {{((weather-32)*5)/9}}</h2>
+  </div>
+  <div *ngIf = "((weather-32)*5)/9 < 30 ">
+    <h2 class ="normal">Temperature(in Farenheit) : {{weather}}</h2>
+    <h2 class ="normal">Temperature(in Celsius) : {{((weather-32)*5)/9}}</h2>
+</div>
+  
+</div>
